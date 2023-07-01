@@ -31,3 +31,13 @@ def test_many_arguments():
     actual = parse(text)
 
     assert actual == expected
+
+
+def test_many_lines():
+    text = 'module test_module\nversion 0.1.0'
+
+    expected = [Keyword(name='module', arguments=['test_module']),
+                Keyword(name='version', arguments=['0.1.0'])]
+    actual = parse(text)
+
+    assert actual == expected
